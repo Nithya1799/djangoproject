@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block title%}
+<title>Otp</title>
+{% endblock %}
+{% block content%}
+<div class="container border border-solid border-dark mt-5">
+<h3 class="text-center">Enter OTP:</h3>
+ <form method="post">
+        {% csrf_token %}
+      <div class="text-center">
+        <input type="text" name="o">
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+     </div>
+<div class="text-center text-danger">
+    {% if messages %}
+    {% for m in messages %}
+    {{m}}
+    {% endfor %}
+    {% endif %}
+</div>
+</div>
+{% endblock %}

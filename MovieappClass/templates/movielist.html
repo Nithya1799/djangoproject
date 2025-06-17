@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Movielist</title>
+{% endblock %}
+{% block content %}
+<h2 class="mb-5">Movie List</h2>
+<div class="container">
+    <div class="row">
+        {% for m in movies %}
+
+        <div class="col-4">
+
+            <div class="card" style="width: 22rem;">
+  <img src="{{m.image.url}}" height="300px" class="card-img-top" alt="...">
+  <div class="card-body text-dark text-center mx-auto">
+    <h5 class="card-title">{{m.movie_name}}</h5>
+    <p class="card-text">{{m.year}}</p>
+    <a href="{% url 'moviedetail' m.id %}" class="btn btn-primary">Details</a>
+  </div>
+</div>
+
+        </div>
+      {% endfor %}
+    </div>
+</div>
+{% endblock %}

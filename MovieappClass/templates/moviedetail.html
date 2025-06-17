@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Movielist</title>
+{% endblock %}
+{% block content %}
+
+<div class="container w-50 mt-5">
+   <div class="card mb-3 mx-auto" style="max-width:95%;">
+  <div class="row g-0">
+    <div class="col-md-4 p-3">
+      <img src="{{movie.image.url}}" class="rounded-start"  height="450px" width="100%" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body p-4">
+        <h3 class="card-title">{{movie.movie_name}}</h3>
+        <p class="card-text" style="text-align:justify;text-indent:50px;">{{movie.description}}</p>
+        <p class="card-text"><small class="text-muted">{{movie.director}}</small></p>
+          <div class="d-flex justify-content-evenly">
+              <a class="btn btn-secondary px-4" href="{% url 'deletemovie' movie.id %}">Delete</a>
+              <a class="btn btn-secondary px-4" href="{% url 'editmovie' movie.id %}">Edit</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+{% endblock %}

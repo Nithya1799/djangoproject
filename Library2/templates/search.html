@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags%}
+{% block title%}
+<title>Search</title>
+{% endblock %}
+{% block content%}
+<h1 class="text-center">Search Book</h1>
+{% if book %}
+<table class="table table-bordered border border-danger ">
+<tr class="bg-light">
+    <th>TITLE</th>
+    <th>AUTHOR</th>
+    <th>PRICE</th>
+    <th>PAGES</th>
+    <th>LANGUAGE</th>
+    <th>COVER</th>
+
+    </tr>
+
+
+{% for b in book %}
+    <tr>
+       <td>{{b.title}}</td>
+    <td>{{b.author}}</td>
+    <td>{{b.price}}</td>
+    <td>{{b.pages}}</td>
+    <td>{{b.language}}</td>
+    <td><img src="{{b.image.url}}" height="150" width="150"></td>
+
+
+</tr>
+
+{% endfor %}
+</table>
+{% else %}
+<h3>No Results...😔</h3>
+
+{% endif %}
+{% endblock %}

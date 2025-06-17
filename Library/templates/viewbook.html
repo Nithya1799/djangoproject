@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+ {% block title %}
+    <title>viewbook</title>
+    {% endblock %}
+{% block content %}
+
+
+<div class="container w-75 mt-3 p-5">
+    <h2>BookList</h2>
+<!--    <ol>-->
+
+<!--        {% for b in books %}-->
+<!--        <li>Book Details</li>-->
+<!--        <ul>-->
+<!--            <li>Title - {{b.title}}</li>-->
+<!--             <li>Author- {{b.author}}</li>-->
+<!--             <li>Price - {{b.price}}</li>-->
+<!--             <li>Language - {{b.language}}</li>-->
+<!--             <li>Pages - {{b.pages}}</li>-->
+<!--             <li>Cover - {{b.image}}</li>-->
+<!--        </ul>-->
+<!--        {% endfor %}-->
+
+<!--    </ol>-->
+
+<table class="table table-bordered text-center">
+    <tr>
+        <th>COVER</th>
+        <th>TITLE</th>
+        <th>AUTHOR</th>
+        <th>PRICE</th>
+        <th>LANGUAGE</th>
+        <th>PAGES</th>
+        <th>ACTIONS</th>
+
+    </tr>
+    {% for b in books %}
+    <tr>
+        <td><img src="{{b.image.url}}" height="150px" width="150px"></td>
+        <td>{{b.title}}</td>
+        <td>{{b.author}}</td>
+        <td>{{b.price}}</td>
+        <td>{{b.language}}</td>
+        <td>{{b.pages}}</td>
+        <td><a class="btn btn-light me-4" href="{% url 'books:bookdetail' b.id %}">Detail</a>
+            <a class="btn btn-light me-4" href="{% url 'books:editbook' b.id %}">Edit</a>
+            <a class="btn btn-light me-4" href="{% url 'books:deletebook' b.id %}">Delete</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

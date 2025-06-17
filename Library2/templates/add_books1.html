@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block title%}
+<title>Addbook1</title>
+{% endblock %}
+{% block content%}
+<div class="container border border-solid border-dark mt-5">
+    <h1 class="text-center">Add Book1(User Defined)</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="mb3">
+        <label class="form-label">Title</label>
+        <input type="text" name='t' class="form-control">
+    </div>
+    <div class="mb3">
+        <label class="form-label">Author</label>
+        <input type="text"  name='a'class="form-control">
+    </div>
+    <div class="mb3">
+        <label class="form-label">Price</label>
+        <input type="number" name='p' class="form-control">
+    </div>
+    <div class="mb3">
+        <label class="form-label">Pages</label>
+        <input type="number" name='pa' class="form-control">
+    </div>
+    <div class="mb3">
+        <label class="form-label">Language</label>
+        <input type="text" name='l' class="form-control">
+    </div>
+    <div class="mb3">
+        <label class="form-label">Image</label>
+        <input type="file" name='i' class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

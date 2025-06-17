@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% block title%}
+<title>Details</title>
+{% endblock %}
+{% block content%}
+
+
+<h1 style="color:#034014;text-align:center;text-decoration:bold;">Details</h1>
+<div class="row mt-3">
+
+<div class="col-4 container">
+<div class="card mx-auto" style="width: 18rem;">
+
+  <img src="{{book.image.url}}"  class="card-img-top" alt="...">
+
+  <div class="card-body ">
+    <h5 class="card-title text-success text-center">{{book.title}}</h5>
+      <h5 class="card-title">AUTHOR:{{book.author}}</h5>
+    <h5 class="card-title">LANGUAGE:{{book.language}}</h5>
+    <h5 class="card-title">PRICE:{{book.price}}</h5>
+    <h5 class="card-title">PAGES:{{book.pages}}</h5>
+
+
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="bg-secondary">
+
+
+<div class="container w-50 border border-2 px-5 pb-5 pt-5 mt-5">
+    <h2 style="text-align:center;">Calorie Calculator</h2>
+ <form method="POST">
+        {% csrf_token %}
+
+             {{form|crispy}}
+
+        <input type="submit">
+    </form>
+
+    {% if result %}
+<h2>You must need {{result}} calorie to maintain your current weight</h2>
+    {% endif %}
+    </div>
+</body>
+</html>

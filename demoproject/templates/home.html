@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<h2>WELCOME TO HOME PAGE</h2>
+{{csrf_token}}
+<!--{{ ...}}-->
+<img src="{% static 'images/x.jpg' %}" height="400px" width="400px">
+<h3>Name is {{name}}</h3>
+<h3>Age is {{age}}</h3>
+<h3>Place is {{place}}</h3>
+</body>
+</html>
